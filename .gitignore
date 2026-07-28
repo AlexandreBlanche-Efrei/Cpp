@@ -1,0 +1,6 @@
+.DS_Store
+*.txt
+cours/todo
+
+/.quarto/
+**/*.quarto_ipynb

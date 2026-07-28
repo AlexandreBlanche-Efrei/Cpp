@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+
+execute:
+  freeze: auto
+
+website:
+  title: "Cours de C++"
+  navbar:
+    search: true
+    # left:
+    #   - text: Cours
+    #     menu:
+    #       - href: cm0-introduction.qmd
+      
+  favicon: figures/efrei_pantheon.png
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+    margin-header: |
+      ![](/figures/logo-efrei.svg)
+
+
