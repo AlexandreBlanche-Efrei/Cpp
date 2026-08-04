@@ -24,16 +24,18 @@ int main() {
     l.push_front(8);
     l.print();
 
-    l.set(3, 10);
+    l[3] = 10; // operator[] : syntaxe plus claire que l.set(3, 10);
     l.print();
 
     const int index = 1;
-    std::cout << "list[" << index << "] = " << l.get(index) << std::endl;
+    // l[index] au lieu de l.get(index)
+    std::cout << "list[" << index << "] = " << l[index] << std::endl;
     l.print();
 
     list rev = l.reverse(); // Déduction du paramètre de template (<int>)
     rev.print();
 
+    // Avantage du C++ : pas besoin d'appeler les destructeurs, ils seront appelés automatiquement
 
     //////////////////////////////////
 
@@ -57,8 +59,8 @@ int main() {
     std::cout << "ll: ";
     ll.print();
 
-    // list<int> ll2 = ll; // Impossible : opérateur de copie supprimé
-    list<int> ll2 = std::move(ll); // On peut seulement faire une affectation par move
+    // list<int> ll2 = ll; // Impossible : affectation par copie supprimée
+    list ll2 = std::move(ll); // On peut seulement faire une affectation par move
 
     std::cout << "ll: ";
     ll.print();
@@ -72,7 +74,10 @@ int main() {
     ll.print();
 
     std::cout << "ll2: ";
-    ll2.print();
+    ll2.print(); // Ne cause pas d'erreur, ll2 possède la ressource
     
+    // On pouvait également définir un constructeur et une affectation par copie (profonde) :
+    // copie de chaque élément dans la nouvelle liste
+
     return EXIT_SUCCESS;
 }

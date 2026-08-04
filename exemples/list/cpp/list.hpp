@@ -92,7 +92,14 @@ class list {
             size++;
         }
 
-        T get(int index) const {
+        // Version non-const : on peut modifier la référence obtenue
+        T& get(int index) {
+            cell& cell = get_cell(index);
+            return cell.value;
+        }
+
+        // Surcharge const : la référence obtenue est constante
+        const T& get(int index) const {
             const cell& cell = get_cell(index);
             return cell.value;
         }
@@ -100,6 +107,15 @@ class list {
         void set(int index, T val) {
             cell& cell = get_cell(index);
             cell.value = val;
+        }
+
+        T& operator[](int index) {
+            return get(index);
+        }
+
+        // Surcharge const
+        const T& operator[](int index) const {
+            return get(index);
         }
 
         void insert(int index, T val) {
