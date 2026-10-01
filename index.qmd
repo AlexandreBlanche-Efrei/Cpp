@@ -1,6 +1,22 @@
 ---
-title: "C++"
+title: "EFREI Algo Team - Tutoriel C++"
 ---
 
-# ...
+Bienvenue dans le tutoriel de C++ de l'EFREI Algo Team !
+Vous y trouverez des aides pour démarrer, ainsi que des articles plus détaillés pour découvrir les notions plus avancées du langage.
 
+![_](figures/ISO_CPP_Logo.svg){width=30%}
+
+# Fiches introductives
+
+Pour résoudre des problèmes d'algorithmiques en C++, les notions suivantes vous seront utiles !
+
+<!-- - **Démarrer un code C++** : un exemple de base de code CodinGame, avec entrées-sorties et affichage du résultat -->
+
+- **Le conteneur ``vector``** : bien meilleur que les tableaux classiques du C, il connaît sa propre taille et se redimensionne automatiquement !
+
+<!-- 
+- **Les entrées-sorties ``cin``-``cout``** : pour demander des valeurs à l'utilisateur, et afficher vos résultats
+
+- **Le type ``string``** : pour gérer vos chaînes de caractères en toute simplicité
+ -->

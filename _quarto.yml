@@ -6,13 +6,13 @@ execute:
   freeze: auto
 
 website:
-  title: "Cours de C++"
+  title: "Tutoriel C++"
   navbar:
     search: true
-    # left:
-    #   - text: Cours
-    #     menu:
-    #       - href: cm0-introduction.qmd
+    left:
+      - text: Fiches d'aide
+        menu:
+          - href: cours/vignettes/vector.qmd
       
   favicon: figures/efrei_pantheon.png
 
@@ -24,6 +24,6 @@ format:
     css: styles.css
     toc: true
     margin-header: |
-      ![](/figures/logo-efrei.svg)
+      ![](/figures/AlgoTeam.png)
 
 

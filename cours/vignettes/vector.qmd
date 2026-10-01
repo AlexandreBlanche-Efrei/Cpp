@@ -1,0 +1,94 @@
+---
+title: "Le conteneur **``vector``**"
+---
+
+Le conteneur ``vector`` implémente la structure de **tableau dynamique**. C'est la solution privilégiée pour stocker des éléments de manière contiguë.
+
+```C++
+#include <vector>
+
+int main() {
+
+    // Définition
+    std::vector<int> v = { 1, 2, 3, 4 };
+}
+```
+
+Le **type** des éléments doit être spécifié entre chevrons ``< >`` (car il s'agit d'une classe *template*) :
+```C++
+std::vector<int> v; // v contient des int
+
+struct mystruct {
+    int a, b, c;
+};
+
+std::vector<mystruct> w; // w contient des objets de type mystruct
+```
+
+Un ``vector`` se **redimensionne automatiquement** si sa taille logique ``v.size()`` dépasse sa capacité : on peut y ajouter des éléments, avec ``v.push_back()``, sans crainte de dépassement de capacité.
+
+```C++
+// Ajout d'un élément
+
+v.push_back(5); // Ajout de 5 à v
+
+w.push_back({ 1, 2, 3 }); // Ajout d'un mystruct à w
+```
+
+On accède à chaque case comme dans un tableau classique, via son indice...
+
+```C++
+// Boucle for
+
+for (int i = 0; i < v.size(); i++) {
+    t[i] = 0;
+}
+```
+
+... ou via **une boucle *for-each***, bien pratique si l'on veut juste énumérer tous les éléments dans l'ordre :
+
+```C++
+// Affichage d'un vector
+
+// Par valeur (int x)
+for (int x : v) {
+
+    std::cout << x << " ";
+}
+std::cout << std::endl;
+
+// Par référence const (const mystruct&), pour les objets volumineux
+for (const mystruct& m : w) {
+
+    std::cout << "(" m.a << ", " << m.b << ", " << m.c << ") ";
+}
+std::cout << std::endl;
+
+// Par référence, pour modifier les éléments
+for (int& x : v) {
+    x = 0;
+}
+```
+
+::: {.callout-warning}
+Il faut obligatoirement passer les ``vector`` par **référence** à une fonction, pour éviter que son contenu ne soit **copié** dans une variable locale.
+```C++
+// Erreur fatale : coût catastrophique en performance
+void wrong(std::vector<int> v) { // <-- copie de tous les éléments dans un nouveau v
+
+    std::cout << v[0] << std::endl;
+}
+
+// Correct : (pas de modification : const &)
+void right(const std::vector<int>& v) { // accès en lecture, pas de copie
+
+    std::cout << v[0] << std::endl;
+}
+
+// Avec modification : (&)
+void right_with_modif(std::vector<int>& v) { // accès en lecture-écriture
+
+    v.push_back(0);
+}
+```
+:::
