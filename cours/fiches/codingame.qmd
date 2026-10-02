@@ -4,13 +4,13 @@ title: "Démarrer un défi CodinGame"
 
 Dans cet article, je commente les étapes de la résolution d'un problème CodinGame, ici "*Unary*".
 
-![_](../../../figures/CodinGame/CodinGame_01_challenge.png){width=90%}
+![_](../../figures/CodinGame/CodinGame_01_challenge.png){width=90%}
 
 # Code de base
 
 CodinGame fournit toujours une base de code, qui gère les entrées :
 
-![_](../../../figures/CodinGame/CodinGame_02_codebase.png){width=70%}
+![_](../../figures/CodinGame/CodinGame_02_codebase.png){width=70%}
 
 Dans le code ci-dessus, on peut observer :
 
@@ -38,13 +38,13 @@ Dans ce problème, nous devons encoder les bits d'une chaîne de caractère en u
 
 2. Construire la chaîne encodée : j'utilise une [**``string``**](string.qmd) ``res``, que j'affiche avec ``cout << res << endl;`` (voir fiche [``cin-cout``](cin-cout.qmd))
 
-![_](../../../figures/CodinGame/CodinGame_03_main.png){width=40%}
+![_](../../figures/CodinGame/CodinGame_03_main.png){width=40%}
 
 ## Construction du tableau
 
 J'écris une fonction ``add_bits_to_array``, qui ajoute les 7 bits de la représentation ASCII d'un caractère ``c`` au vector ``bits``.
 
-![_](../../../figures/CodinGame/CodinGame_04_addbits.png){width=60%}
+![_](../../figures/CodinGame/CodinGame_04_addbits.png){width=60%}
 
 - Ma fonction prend le vector ``bits`` **par référence** (avec un ``&``) : le vector défini dans la fonction ``main`` est modifié par ma fonction (sans avoir à utiliser de pointeur).
 
@@ -56,7 +56,7 @@ J'écris une fonction ``add_bits_to_array``, qui ajoute les 7 bits de la représ
 
 ## Encodage de la séquence de bits
 
-![_](../../../figures/CodinGame/CodinGame_05_encode.png){width=60%}
+![_](../../figures/CodinGame/CodinGame_05_encode.png){width=60%}
 
 - Je prends le [**vector**](vector.qmd) ``bits`` en entrée **par référence**, avec un **``&``** à la suite du type, pour éviter de le copier au moment de l'appel de la fonction. Comme il n'est **pas modifié**, j'aurais même pu l'appeler par référence ``const`` :   
 
@@ -74,7 +74,7 @@ J'écris une fonction ``add_bits_to_array``, qui ajoute les 7 bits de la représ
 
 Une fois mon code écrit, je clique sur **Tous les tests**, et j'observe que ma fonction les valide tous. Je peux alors cliquer sur **Soumettre**, et obtenir mon score final.
 
-![_](../../../figures/CodinGame/CodinGame_06_tests.png)
+![_](../../figures/CodinGame/CodinGame_06_tests.png)
 
 # Débuggage
 
