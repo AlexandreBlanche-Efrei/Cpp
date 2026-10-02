@@ -1,0 +1,68 @@
+---
+title: "Le type **string** : les chaînes de caractères"
+---
+
+Le type ``std::string`` implémente les chaînes de caractères en C++, et permet une manipulation simple et efficace. A la manière de ``vector``, la mémoire y est gérée automatiquement.
+
+```C++
+#include <string> // En-tête à importer
+#include <iostream>
+
+int main() {
+
+    // Définition d'une string
+    std::string s = "Bonjour";
+
+    // Affichage
+    std::cout << s << std::endl;
+}
+```
+```
+Bonjour
+```
+
+On peut aussi construire une chaîne par **concaténations** successives, avec les opérateurs ``+`` ou ``+=`` :
+
+```C++
+std::string s; // s est vide
+
+s += "ABC";
+s = s + "def";
+
+std::cout << "s = " << s << std::endl;
+```
+```
+s = ABCdef
+```
+
+On peut accéder aux caractères individuellement comme dans un tableau :
+
+```C++
+for (int i = 0; i < s.length(); i++) {
+    s[i] = 'z';
+}
+for (char c : s) {
+    // ...
+}
+```
+
+# Exemple : saisie de chaîne de caractères
+
+```C++
+#include <iostream>
+#include <string>
+
+int main() {
+    std::cout << "Quel est votre nom ? ";
+    
+    std::string s;
+    std::cin >> s;
+    
+    std::cout << "Bonjour " << s << " !" << std::endl;
+}
+```
+
+```
+Quel est votre nom ? Bob
+Bonjour Bob !
+```

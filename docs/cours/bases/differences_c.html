@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Les différences de syntaxe entre C et C++ – Cours de C++</title>
+<title>Les différences de syntaxe entre C et C++ – EFREI Algo Team - Tutoriel C++</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,12 +119,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Cours de C++</span>
+    <span class="navbar-title">EFREI Algo Team - Tutoriel C++</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools tools-end">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fiches-daide" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Fiches d’aide</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fiches-daide">    
+        <li>
+    <a class="dropdown-item" href="../../cours/fiches/codingame.html">
+ <span class="dropdown-text">Démarrer un défi CodinGame</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../cours/fiches/vector.html">
+ <span class="dropdown-text">Le conteneur <strong>vector</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../cours/fiches/string.html">
+ <span class="dropdown-text">Le type <strong>string</strong> : les chaînes de caractères</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../cours/fiches/cin-cout.html">
+ <span class="dropdown-text">Les entrées-sorties : <strong>cin</strong> - <strong>cout</strong></span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-articles-détaillés" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Articles détaillés</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-articles-détaillés">    
+        <li>
+    <a class="dropdown-item" href="../../cours/bases/differences_c.html">
+ <span class="dropdown-text">Les différences de syntaxe entre C et C++</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
 </div>
-          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -133,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
-<p><img src="../../figures/logo-efrei.svg" class="img-fluid"></p>
+<p><img src="../../figures/AlgoTeam.png" class="img-fluid"></p>
 </div></div>
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
@@ -148,35 +189,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#entrées-sorties" id="toc-entrées-sorties" class="nav-link" data-scroll-target="#entrées-sorties">Entrées / Sorties</a>
   <ul class="collapse">
-  <li><a href="#en-c" id="toc-en-c" class="nav-link" data-scroll-target="#en-c">En C :</a></li>
-  <li><a href="#en-c-1" id="toc-en-c-1" class="nav-link" data-scroll-target="#en-c-1">En C++ :</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><img src="../../figures/C1stEdition.svg" width="6%"></a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"></a></li>
   </ul></li>
   <li><a href="#struct" id="toc-struct" class="nav-link" data-scroll-target="#struct"><code>struct</code></a>
   <ul class="collapse">
-  <li><a href="#en-c-2" id="toc-en-c-2" class="nav-link" data-scroll-target="#en-c-2">En C :</a></li>
-  <li><a href="#en-c-3" id="toc-en-c-3" class="nav-link" data-scroll-target="#en-c-3">En C++ :</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"><img src="../../figures/C1stEdition.svg" width="6%"></a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"></a></li>
   </ul></li>
-  <li><a href="#enum" id="toc-enum" class="nav-link" data-scroll-target="#enum"><code>enum</code></a></li>
+  <li><a href="#enum" id="toc-enum" class="nav-link" data-scroll-target="#enum"><code>enum</code></a>
+  <ul class="collapse">
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"></a></li>
+  </ul></li>
   <li><a href="#conversions-cast" id="toc-conversions-cast" class="nav-link" data-scroll-target="#conversions-cast">Conversions / <em>cast</em></a>
   <ul class="collapse">
-  <li><a href="#en-c-4" id="toc-en-c-4" class="nav-link" data-scroll-target="#en-c-4">En C :</a></li>
-  <li><a href="#en-c-5" id="toc-en-c-5" class="nav-link" data-scroll-target="#en-c-5">En C++ :</a></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5"><img src="../../figures/C1stEdition.svg" width="6%"></a></li>
+  <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"></a></li>
   </ul></li>
   <li><a href="#allocation-mémoire" id="toc-allocation-mémoire" class="nav-link" data-scroll-target="#allocation-mémoire">Allocation mémoire</a>
   <ul class="collapse">
-  <li><a href="#en-c-6" id="toc-en-c-6" class="nav-link" data-scroll-target="#en-c-6">En C :</a></li>
-  <li><a href="#en-c-7" id="toc-en-c-7" class="nav-link" data-scroll-target="#en-c-7">En C++ :</a></li>
+  <li><a href="#section-7" id="toc-section-7" class="nav-link" data-scroll-target="#section-7"><img src="../../figures/C1stEdition.svg" width="6%"></a></li>
+  <li><a href="#section-8" id="toc-section-8" class="nav-link" data-scroll-target="#section-8"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"></a></li>
   </ul></li>
   <li><a href="#pointeurs" id="toc-pointeurs" class="nav-link" data-scroll-target="#pointeurs">Pointeurs</a>
   <ul class="collapse">
-  <li><a href="#références" id="toc-références" class="nav-link" data-scroll-target="#références">Références</a></li>
-  <li><a href="#destructeurs" id="toc-destructeurs" class="nav-link" data-scroll-target="#destructeurs">Destructeurs</a></li>
-  <li><a href="#pointeurs-intelligents-smart-pointers" id="toc-pointeurs-intelligents-smart-pointers" class="nav-link" data-scroll-target="#pointeurs-intelligents-smart-pointers">Pointeurs intelligents (<em>smart pointers</em>)</a></li>
+  <li><a href="#section-9" id="toc-section-9" class="nav-link" data-scroll-target="#section-9"><img src="../../figures/C1stEdition.svg" width="6%"></a></li>
+  <li><a href="#références" id="toc-références" class="nav-link" data-scroll-target="#références"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"> Références</a></li>
+  <li><a href="#destructeurs" id="toc-destructeurs" class="nav-link" data-scroll-target="#destructeurs"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"> Destructeurs</a></li>
+  <li><a href="#pointeurs-intelligents-smart-pointers" id="toc-pointeurs-intelligents-smart-pointers" class="nav-link" data-scroll-target="#pointeurs-intelligents-smart-pointers"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"> Pointeurs intelligents (<em>smart pointers</em>)</a></li>
   </ul></li>
   <li><a href="#alias-de-types" id="toc-alias-de-types" class="nav-link" data-scroll-target="#alias-de-types">Alias de types</a>
   <ul class="collapse">
-  <li><a href="#en-c-8" id="toc-en-c-8" class="nav-link" data-scroll-target="#en-c-8">En C :</a></li>
-  <li><a href="#en-c-9" id="toc-en-c-9" class="nav-link" data-scroll-target="#en-c-9">En C++ :</a></li>
+  <li><a href="#section-10" id="toc-section-10" class="nav-link" data-scroll-target="#section-10"><img src="../../figures/C1stEdition.svg" width="6%"></a></li>
+  <li><a href="#section-11" id="toc-section-11" class="nav-link" data-scroll-target="#section-11"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -203,16 +248,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>WORK IN PROGRESS</strong></p>
-<p>Les programmes en C++ sont presque intégralement compatibles avec le langage C++, et il est ainsi possible de combiner des programmes en C et en C++ dans un même projet, ou d’utiliser la plupart des bibliothèques écrites en C.</p>
-<p>Cependant, pour les projets à vocation professionnelle, l’usage d’une syntaxe héritée du C est découragée, afin de tirer parti des avantages d’abstraction et de <em>sûreté du typage</em> offerts par le C++.</p>
-<p>Les principales différences de syntaxe sont listées ci-dessous. Je ne traite pas ici des nouvelles fonctionnalités exclusives au C++ (librairie standard, templates, programmation orientée-objet, …).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../figures/C_Cpp.png" class="img-fluid figure-img"></p>
+<figcaption>_</figcaption>
+</figure>
+</div>
+<p>Les programmes en C sont presque intégralement compatibles avec le langage C++, et il est ainsi possible de combiner des programmes en C et en C++ dans un même projet, ou d’utiliser la plupart des bibliothèques écrites en C.</p>
+<p>Cependant, pour les projets à vocation professionnelle, l’usage d’une syntaxe héritée du C est découragée, afin de tirer parti des avantages d’<strong>abstraction</strong> et de <strong><em>sûreté du typage</em></strong> (<em>type safety</em>) offerts par le C++.</p>
+<p>Les principales différences de syntaxe sont listées ci-dessous. Je ne traite pas ici des nouvelles fonctionnalités exclusives au C++ (librairie standard, <em>templates</em>, programmation orientée-objet, …).</p>
+<ol type="1">
+<li><a href="#général">Général</a></li>
+<li><a href="#entrées-sorties">Entrées-sorties</a></li>
+<li><a href="#struct"><code>struct</code></a></li>
+<li><a href="#enum"><code>enum</code></a></li>
+<li><a href="#conversions-cast">Conversions / <em>cast</em></a></li>
+<li><a href="#allocation-mémoire">Allocations mémoire</a></li>
+<li><a href="#pointeurs">Pointeurs</a></li>
+<li><a href="#alias-de-types">Alias de types</a></li>
+</ol>
 <section id="général" class="level1">
 <h1>Général</h1>
 <section id="noms-de-fichiers" class="level2">
 <h2 class="anchored" data-anchor-id="noms-de-fichiers">Noms de fichiers</h2>
-<p>En C, les fichiers source ont l’extension <code>.c</code> et les fichiers d’en-tête (<em>header</em>) <code>.h</code>.</p>
-<p>En C++, les fichiers source ont en général l’extension <code>.cpp</code> (mais parfois <code>.cxx</code>, <code>.cc</code>, …) et les fichiers d’en-tête l’extension <code>.hpp</code> (ou <code>.h</code>, <code>hxx</code>, …).</p>
+<p><img src="../../figures/C1stEdition.svg" width="4%"> &nbsp;&nbsp;&nbsp; Les fichiers source ont l’extension <code>.c</code> et les fichiers d’en-tête (<em>header</em>) <code>.h</code>.</p>
+<p><img src="../../figures/ISO_CPP_Logo.svg" width="5%"> &nbsp; Les fichiers source ont en général l’extension <code>.cpp</code> (mais parfois <code>.cxx</code>, <code>.cc</code>, …) et les fichiers d’en-tête l’extension <code>.hpp</code> (ou <code>.h</code>, <code>.hxx</code>, …).</p>
 </section>
 <section id="en-têtes-de-fichiers" class="level2">
 <h2 class="anchored" data-anchor-id="en-têtes-de-fichiers">En-têtes de fichiers</h2>
@@ -227,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cmath&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Les headers hérités du C <code>&lt;name.h&gt;</code> peuvent ne pas compiler en C++, et tout leur contenu est dans <em>l’espace de nom</em> (<em>namespace</em>) global, ce qui peut causer des incompatibilités de noms.<br>
+<p><img src="../../figures/ISO_CPP_Logo.svg" width="5%"> &nbsp; Les headers hérités du C <code>&lt;name.h&gt;</code> peuvent <strong>ne pas compiler</strong> en C++, et tout leur contenu est dans <em>l’espace de nom</em> (<em>namespace</em>) global, ce qui peut causer des incompatibilités de noms.<br>
 Leur version C++ <code>&lt;cname&gt;</code> contient strictement les mêmes variables, fonctions, et types, adaptés au C++ et placés dans l’espace de noms <code>std</code>.</p>
 <p>Les fichiers d’en-tête exclusifs au C++ n’ont pas de préfixe <code>c</code> :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
@@ -238,12 +298,12 @@ Leur version C++ <code>&lt;cname&gt;</code> contient strictement les mêmes vari
 </section>
 <section id="pointeur-nul" class="level2">
 <h2 class="anchored" data-anchor-id="pointeur-nul">Pointeur nul</h2>
-<p>En C, la macro <code>NULL</code> qui désigne le pointeur nul est simplement un <code>#define NULL 0</code> dans <code>&lt;stdlib.h&gt;</code>.</p>
-<p>En C++, on préfère utiliser le mot-clé <code>nullptr</code>, dont le type est vérifié à la compilation (il est de type pointeur, et ne peut pas être converti implicitement en <code>0</code>).</p>
+<p><img src="../../figures/C1stEdition.svg" width="4%"> &nbsp;&nbsp;&nbsp; La macro <code>NULL</code> qui désigne le pointeur nul est simplement un <code>#define NULL 0</code> dans <code>&lt;stdlib.h&gt;</code>.</p>
+<p><img src="../../figures/ISO_CPP_Logo.svg" width="5%"> &nbsp; En C++, on préfère utiliser le mot-clé <code>nullptr</code>, dont le type est vérifié à la compilation (il est de type pointeur, et ne peut pas être converti implicitement en <code>0</code>).</p>
 </section>
 <section id="définition-de-constante" class="level2">
 <h2 class="anchored" data-anchor-id="définition-de-constante">Définition de constante</h2>
-<p>En C, les constantes connues à la compilation sont en général définies par une instruction de préprocesseur.</p>
+<p><img src="../../figures/C1stEdition.svg" width="4%"> &nbsp;&nbsp;&nbsp; Les constantes connues à la compilation sont en général définies par une <strong>instruction de préprocesseur</strong> (<code>#define</code>).</p>
 <p><strong>Taille d’un tableau :</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> t<span class="op">[</span>n<span class="op">];</span> <span class="co">// Interdit : la valeur de n n'est pas connue à coup sûr à la compilation, même avec le mot-clé const</span></span>
@@ -263,7 +323,7 @@ Leur version C++ <code>&lt;cname&gt;</code> contient strictement les mêmes vari
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>Color c <span class="op">=</span> RED<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>L’inconvénient est que cette macro n’est qu’une <strong>substitution textuelle</strong>. <code>RED</code> n’est pas une variable, elle n’a pas d’adresse, son type n’est pas vérifié, et l’on encourt des erreurs de syntaxe si l’on omet les parenthèses.</p>
-<p>En C++, on utilisera plutôt le mot-clé <code>constexpr</code>.</p>
+<p><img src="../../figures/ISO_CPP_Logo.svg" width="5%"> &nbsp; En C++, on utilisera plutôt le mot-clé <code>constexpr</code>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Color <span class="op">{</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">float</span> r<span class="op">,</span> g<span class="op">,</span> b<span class="op">;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
@@ -277,8 +337,8 @@ Leur version C++ <code>&lt;cname&gt;</code> contient strictement les mêmes vari
 </section>
 <section id="entrées-sorties" class="level1">
 <h1>Entrées / Sorties</h1>
-<section id="en-c" class="level2">
-<h2 class="anchored" data-anchor-id="en-c">En C :</h2>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"><img src="../../figures/C1stEdition.svg" width="6%"></h2>
 <p>Les opérations d’entrée-sortie sont réalisées par le biais de l’en-tête <code>&lt;stdio.h&gt;</code> et ses fonctions <code>printf</code>, <code>scanf</code> ou de manière plus sécurisée <code>fgets</code>.</p>
 <p><strong>Exemple :</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
@@ -318,8 +378,8 @@ Leur version C++ <code>&lt;cname&gt;</code> contient strictement les mêmes vari
 <span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> EXIT_SUCCESS<span class="op">;</span></span>
 <span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="en-c-1" class="level2">
-<h2 class="anchored" data-anchor-id="en-c-1">En C++ :</h2>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"></h2>
 <p>Les opérations d’entrée-sorties sont réalisées avec les opérateurs <code>&gt;&gt;</code> et <code>&lt;&lt;</code> et les entrées et sorties standards <code>std::cin</code> et <code>std::cout</code> inclues dans l’en-tête <code>&lt;iostream&gt;</code>.</p>
 <p>La syntaxe de l’affichage est la suivante :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"your string"</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -392,9 +452,9 @@ Note
 </section>
 <section id="struct" class="level1">
 <h1><code>struct</code></h1>
-<section id="en-c-2" class="level2">
-<h2 class="anchored" data-anchor-id="en-c-2">En C :</h2>
-<p>Le mot-clé <code>struct</code> doit être répété à chaque mention d’un type <code>struct</code>, ce qui est très fastidieux. On utilise donc des alias (<code>typedef</code>) pour immédiatement renommer notre structure :</p>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2"><img src="../../figures/C1stEdition.svg" width="6%"></h2>
+<p>Le mot-clé <code>struct</code> doit être répété à chaque mention d’un type <code>struct</code>, ce qui est très fastidieux. On utilise donc des <a href="#alias-de-types"><strong>alias</strong></a> (<code>typedef</code>) pour immédiatement renommer notre structure :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Par défaut :</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> A <span class="op">{</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> x<span class="op">;</span></span>
@@ -433,9 +493,9 @@ Note
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co">// ou, parfois plus clair :</span></span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>S s <span class="op">=</span> <span class="op">{</span> <span class="op">.</span>a <span class="op">=</span> <span class="dv">5</span><span class="op">,</span> <span class="op">.</span>b <span class="op">=</span> <span class="fl">2.5</span><span class="bu">f</span> <span class="op">};</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="en-c-3" class="level2">
-<h2 class="anchored" data-anchor-id="en-c-3">En C++ :</h2>
-<p>Une <code>struct</code> est identique à une classe : elle peut donc contenir des membres (variables), mais également des méthodes (fonctions), contrairement au C. Dans une <code>struct</code> tous les membres et les méthodes sont publics par défaut.</p>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"></h2>
+<p>Une <code>struct</code> est identique à une classe : elle peut donc contenir des <strong>membres</strong> (variables), mais également des <strong>méthodes</strong> (fonctions), contrairement au C. Dans une <code>struct</code> tous les membres et les méthodes sont <strong>publics</strong> par défaut.</p>
 <p>Pas besoin de <code>typedef</code> ici, le mot-clé <code>struct</code> n’a pas à être répété avant le nom de la structure :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> A <span class="op">{</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> x<span class="op">;</span></span>
@@ -491,6 +551,8 @@ Warning
 </section>
 <section id="enum" class="level1">
 <h1><code>enum</code></h1>
+<section id="section-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-4"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"></h2>
 <p>De même, les <code>enum</code> en <code>C++</code> n’ont plus besoin de leur mot-clé <code>enum</code> :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* C */</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">enum</span> Color <span class="op">{</span></span>
@@ -532,17 +594,18 @@ Warning
 <span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> Green <span class="op">+</span> Blue<span class="op">;</span> <span class="co">// Interdit -&gt; erreur de compilation</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
+</section>
 <section id="conversions-cast" class="level1">
 <h1>Conversions / <em>cast</em></h1>
-<section id="en-c-4" class="level2">
-<h2 class="anchored" data-anchor-id="en-c-4">En C :</h2>
+<section id="section-5" class="level2">
+<h2 class="anchored" data-anchor-id="section-5"><img src="../../figures/C1stEdition.svg" width="6%"></h2>
 <p>La notation courante pour une conversion de type <strong>explicite</strong> (<em>cast</em>) d’un type <code>A</code> vers un type <code>B</code> est la suivante :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>A a<span class="op">;</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>B b <span class="op">=</span> <span class="op">(</span>B<span class="op">)</span> a<span class="op">;</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// On crée une copie de a</span></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// que l'on convertit en valeur de type B</span></span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// et que l'on stocke dans la variable b</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>** Exemple :**</p>
+<p><strong>Exemple :</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> x <span class="op">=</span> a<span class="op">;</span> <span class="co">// Cast implicite int -&gt; float : x == 5.0f</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -570,8 +633,8 @@ Warning
 <span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="en-c-5" class="level2">
-<h2 class="anchored" data-anchor-id="en-c-5">En C++ :</h2>
+<section id="section-6" class="level2">
+<h2 class="anchored" data-anchor-id="section-6"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"></h2>
 <p>On utilise plutôt l’opérateur <code>static_cast</code> afin d’expliciter les conversions le plus possible.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> x <span class="op">=</span> <span class="fl">2.5</span><span class="op">;</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> <span class="kw">static_cast</span><span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;(</span>x<span class="op">);</span></span>
@@ -623,8 +686,8 @@ Warning
 </section>
 <section id="allocation-mémoire" class="level1">
 <h1>Allocation mémoire</h1>
-<section id="en-c-6" class="level2">
-<h2 class="anchored" data-anchor-id="en-c-6">En C :</h2>
+<section id="section-7" class="level2">
+<h2 class="anchored" data-anchor-id="section-7"><img src="../../figures/C1stEdition.svg" width="6%"></h2>
 <p>Les allocations dynamiques sont réalisées avec la fonction <code>malloc</code>, de l’en-tête <code>&lt;stdlib.h&gt;</code>, et la mémoire est libérée avec la fonction <code>free</code>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> <span class="dt">double</span> T<span class="op">;</span> <span class="co">// Exemple</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -675,8 +738,8 @@ Warning
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Allocation d'un tableau de 10 int</span></span>
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> <span class="op">*</span> array <span class="op">=</span> calloc<span class="op">(</span><span class="dv">10</span><span class="op">,</span> <span class="kw">sizeof</span><span class="op">(</span><span class="dt">int</span><span class="op">));</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="en-c-7" class="level2">
-<h2 class="anchored" data-anchor-id="en-c-7">En C++ :</h2>
+<section id="section-8" class="level2">
+<h2 class="anchored" data-anchor-id="section-8"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"></h2>
 <p>On peut allouer dynamiquement un objet d’un type <code>T</code> quelconque avec l’opérateur <code>new</code>. On libère la mémoire avec l’opérateur <code>delete</code>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>T <span class="op">*</span> x <span class="op">=</span> <span class="kw">new</span> T<span class="op">(</span> <span class="co">/* args */</span> <span class="op">);</span> <span class="co">// Appelle le constructeur approprié de T, renvoie un pointeur vers l'objet alloué sur le tas</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="kw">delete</span> x<span class="op">;</span> <span class="co">// Libère la mémoire allouée par l'opérateur new</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -777,11 +840,18 @@ Warning
 </section>
 <section id="pointeurs" class="level1">
 <h1>Pointeurs</h1>
-<p>En C, l’usage des pointeurs est une grande source de vulnérabilités :<br>
-- Il n’y a aucune garantie qu’un pointeur contient <strong>l’adresse d’une variable valide</strong>. Un pointeur peut être nul (contient <code>NULL</code> = <code>0x0</code>) ou pointer vers une adresse invalide (ou libérée), et ne doit pas être déréférencé (sous peine de crash du programme). - Si une plage allouée avec <code>malloc</code> n’est référencée que par un seul pointeur, et que ce pointeur est perdu, il n’est plus possible de libérer la plage : on a alors une <strong>fuite mémoire</strong>. - On peut également oublier de libérer manuellement la mémoire, surtout lorsque beaucoup d’allocations ont lieu.</p>
+<section id="section-9" class="level2">
+<h2 class="anchored" data-anchor-id="section-9"><img src="../../figures/C1stEdition.svg" width="6%"></h2>
+<p>L’usage des pointeurs est une grande source de vulnérabilités :</p>
+<ul>
+<li>Il n’y a aucune garantie qu’un pointeur contient <strong>l’adresse d’une variable valide</strong>. Un pointeur peut être nul (il contient <code>NULL</code> = <code>0x0</code>) ou pointer vers une adresse invalide (ou libérée), et ne doit pas être déréférencé (sous peine de crash du programme).</li>
+<li>Si une plage allouée avec <code>malloc</code> n’est référencée que par un seul pointeur, et que ce pointeur est perdu, il n’est plus possible de libérer la plage : on a alors une <strong>fuite mémoire</strong>.</li>
+<li>On peut également oublier de libérer manuellement la mémoire, surtout lorsque beaucoup d’allocations ont lieu.</li>
+</ul>
 <p>Le C++ introduit diverses méthodes pour y remédier.</p>
+</section>
 <section id="références" class="level2">
-<h2 class="anchored" data-anchor-id="références">Références</h2>
+<h2 class="anchored" data-anchor-id="références"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"> Références</h2>
 <p>Une <strong>référence</strong> est équivalente à un pointeur toujours déréférencé. Sa syntaxe est plus légère que les pointeurs traditionnels (pas de <code>*</code>, <code>&amp;</code> et <code>-&gt;</code>), et ils ont l’avantage de toujours pointer vers une variable valide.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">5</span><span class="op">;</span> <span class="co">// Déclaration d'une nouvelle variable</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -853,8 +923,8 @@ Warning
 <span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="destructeurs" class="level2">
-<h2 class="anchored" data-anchor-id="destructeurs">Destructeurs</h2>
-<p>Lorsque l’on souhaite allouer de la mémoire sans risquer d’oublier d’appeler l’opérateur de libération (<code>delete</code>), il est conseillé confier cette tâche à un destructeur qui est appelé automatiquement lorsqu’un objet a terminé sa durée de vie (lorsqu’il sort du <em>scope</em>).</p>
+<h2 class="anchored" data-anchor-id="destructeurs"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"> Destructeurs</h2>
+<p>Lorsque l’on souhaite allouer de la mémoire sans risquer d’oublier d’appeler l’opérateur de libération (<code>delete</code>), il est conseillé confier cette tâche à un destructeur qui est <strong>appelé automatiquement</strong> lorsqu’un objet a terminé sa durée de vie (lorsqu’il sort du <em>scope</em>).</p>
 <p>On crée pour cela une classe qui encapsule notre structure, et qui s’occupe d’allouer et de désallouer la mémoire automatiquement. On appelle ce genre de classe <em>handle</em> en anglais.</p>
 <p><strong>Exemple :</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Tableau d'entier</span></span>
@@ -862,12 +932,12 @@ Warning
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span><span class="op">*</span> data <span class="op">=</span> <span class="kw">nullptr</span><span class="op">;</span> <span class="co">// Valeurs par défaut</span></span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> size  <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    Array<span class="op">(</span><span class="dt">int</span> n<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    Array<span class="op">(</span><span class="dt">int</span> n<span class="op">)</span> <span class="op">{</span> <span class="co">// Constructeur</span></span>
 <span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>        size <span class="op">=</span> n<span class="op">;</span></span>
 <span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span>size<span class="op">];</span></span>
 <span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">~</span>Array<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">~</span>Array<span class="op">()</span> <span class="op">{</span> <span class="co">// Destructeur</span></span>
 <span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">delete</span><span class="op">[]</span> data<span class="op">;</span></span>
 <span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> <span class="kw">nullptr</span><span class="op">;</span></span>
 <span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>        size <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
@@ -876,7 +946,7 @@ Warning
 <span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> f<span class="op">()</span> <span class="op">{</span></span>
 <span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>    Array arr<span class="op">(</span><span class="dv">20</span><span class="op">);</span></span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>    Array arr<span class="op">(</span><span class="dv">20</span><span class="op">);</span> <span class="co">// Appelle le constructeur</span></span>
 <span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arr<span class="op">.</span>size<span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
 <span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>        <span class="co">// ...</span></span>
@@ -896,7 +966,7 @@ Warning
 <span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="pointeurs-intelligents-smart-pointers" class="level2">
-<h2 class="anchored" data-anchor-id="pointeurs-intelligents-smart-pointers">Pointeurs intelligents (<em>smart pointers</em>)</h2>
+<h2 class="anchored" data-anchor-id="pointeurs-intelligents-smart-pointers"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"> Pointeurs intelligents (<em>smart pointers</em>)</h2>
 <p>Lorsque l’on souhaite allouer un seul objet sur le tas, il est préférable de stocker l’adresse renvoyée dans un <strong>pointeur intelligent</strong> (<em>smart pointer</em>), qui s’occupera de libérer la ressource lorsque l’objet aura terminé sa durée de vie.</p>
 <p>Depuis C++11, les deux principaux types de pointeurs intelligents en C++ sont les <code>unique_ptr</code> et les <code>shared_ptr</code>.</p>
 <p>Un <code>shared_ptr</code> est un objet qui contient un pointeur vers une ressource. La gestion de la mémoire s’opère par <strong>comptage de références</strong> : à chaque fois qu’un <code>shared_ptr</code> est copié, on incrémente le nombre d’objets pointant vers la ressource, et on décrémente ce compteur à chaque fois que l’un de ces objets sort du scope. Lorsque le compteur tombe à zéro, la ressource est détruite et la mémoire est libérée.</p>
@@ -1013,8 +1083,8 @@ Warning
 </section>
 <section id="alias-de-types" class="level1">
 <h1>Alias de types</h1>
-<section id="en-c-8" class="level2">
-<h2 class="anchored" data-anchor-id="en-c-8">En C :</h2>
+<section id="section-10" class="level2">
+<h2 class="anchored" data-anchor-id="section-10"><img src="../../figures/C1stEdition.svg" width="6%"></h2>
 <p>On utilise le mot-clé <code>typedef</code> pour donner un alias à un type existant ou une structure.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> <span class="dt">int</span> T<span class="op">;</span> <span class="co">// T désigne maintenant le type int</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1031,8 +1101,8 @@ Warning
 <span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>    t_cell <span class="op">*</span> head<span class="op">;</span></span>
 <span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> t_list<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="en-c-9" class="level2">
-<h2 class="anchored" data-anchor-id="en-c-9">En C++ :</h2>
+<section id="section-11" class="level2">
+<h2 class="anchored" data-anchor-id="section-11"><img src="../../figures/ISO_CPP_Logo.svg" width="8%"></h2>
 <p>On utilise plutôt la syntaxe <code>using</code> :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> T <span class="op">=</span> <span class="dt">int</span><span class="op">;</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>

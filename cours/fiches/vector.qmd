@@ -1,8 +1,10 @@
 ---
-title: "Le conteneur **``vector``**"
+title: "Le conteneur **vector**"
 ---
 
 Le conteneur ``vector`` implémente la structure de **tableau dynamique**. C'est la solution privilégiée pour stocker des éléments de manière contiguë.
+
+La **mémoire** est gérée automatiquement : pas besoin de gérer les allocations et la libération de la mémoire.
 
 ```C++
 #include <vector>
@@ -10,6 +12,8 @@ Le conteneur ``vector`` implémente la structure de **tableau dynamique**. C'est
 int main() {
 
     // Définition
+    std::vector<int> u(5); // tableau de 5 entiers
+
     std::vector<int> v = { 1, 2, 3, 4 };
 }
 ```
@@ -60,7 +64,7 @@ std::cout << std::endl;
 // Par référence const (const mystruct&), pour les objets volumineux
 for (const mystruct& m : w) {
 
-    std::cout << "(" m.a << ", " << m.b << ", " << m.c << ") ";
+    std::cout << "(" << m.a << ", " << m.b << ", " << m.c << ") ";
 }
 std::cout << std::endl;
 
@@ -70,8 +74,8 @@ for (int& x : v) {
 }
 ```
 
-::: {.callout-warning}
-Il faut obligatoirement passer les ``vector`` par **référence** à une fonction, pour éviter que son contenu ne soit **copié** dans une variable locale.
+::: {.callout-important}
+Si l'on passe un ``vector`` à une fonction, il faut obligatoirement le passer par **référence** (avec un ``&``), pour éviter que son contenu ne soit **copié** dans une variable locale.
 ```C++
 // Erreur fatale : coût catastrophique en performance
 void wrong(std::vector<int> v) { // <-- copie de tous les éléments dans un nouveau v
@@ -80,13 +84,13 @@ void wrong(std::vector<int> v) { // <-- copie de tous les éléments dans un nou
 }
 
 // Correct : (pas de modification : const &)
-void right(const std::vector<int>& v) { // accès en lecture, pas de copie
+void right(const std::vector<int>& v) { // const & : accès en lecture, pas de copie
 
     std::cout << v[0] << std::endl;
 }
 
 // Avec modification : (&)
-void right_with_modif(std::vector<int>& v) { // accès en lecture-écriture
+void right_with_modif(std::vector<int>& v) { // & : accès en lecture-écriture
 
     v.push_back(0);
 }

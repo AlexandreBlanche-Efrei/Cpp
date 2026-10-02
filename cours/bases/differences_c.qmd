@@ -2,21 +2,31 @@
 title: "Les différences de syntaxe entre C et C++"
 ---
 
-**WORK IN PROGRESS**
+![_](../../figures/C_Cpp.png)
 
-Les programmes en C++ sont presque intégralement compatibles avec le langage C++, et il est ainsi possible de combiner des programmes en C et en C++ dans un même projet, ou d'utiliser la plupart des bibliothèques écrites en C.
 
-Cependant, pour les projets à vocation professionnelle, l'usage d'une syntaxe héritée du C est découragée, afin de tirer parti des avantages d'abstraction et de *sûreté du typage* offerts par le C++. 
+Les programmes en C sont presque intégralement compatibles avec le langage C++, et il est ainsi possible de combiner des programmes en C et en C++ dans un même projet, ou d'utiliser la plupart des bibliothèques écrites en C.
 
-Les principales différences de syntaxe sont listées ci-dessous. Je ne traite pas ici des nouvelles fonctionnalités exclusives au C++ (librairie standard, templates, programmation orientée-objet, ...).
+Cependant, pour les projets à vocation professionnelle, l'usage d'une syntaxe héritée du C est découragée, afin de tirer parti des avantages d'**abstraction** et de ***sûreté du typage*** (*type safety*) offerts par le C++. 
+
+Les principales différences de syntaxe sont listées ci-dessous. Je ne traite pas ici des nouvelles fonctionnalités exclusives au C++ (librairie standard, *templates*, programmation orientée-objet, ...).
+
+1. [Général](#général)
+2. [Entrées-sorties](#entrées-sorties)
+3. [``struct``](#struct)
+4. [``enum``](#enum)
+5. [Conversions / *cast*](#conversions-cast)
+6. [Allocations mémoire](#allocation-mémoire)
+7. [Pointeurs](#pointeurs)
+8. [Alias de types](#alias-de-types)
 
 # Général
 
 ## Noms de fichiers
 
-En C, les fichiers source ont l'extension ``.c`` et les fichiers d'en-tête (*header*) ``.h``.
+<img src="../../figures/C1stEdition.svg" width="4%" /> &nbsp;&nbsp;&nbsp; Les fichiers source ont l'extension ``.c`` et les fichiers d'en-tête (*header*) ``.h``.
 
-En C++, les fichiers source ont en général l'extension ``.cpp`` (mais parfois ``.cxx``, ``.cc``, ...) et les fichiers d'en-tête l'extension ``.hpp`` (ou ``.h``, ``hxx``, ...).
+<img src="../../figures/ISO_CPP_Logo.svg" width="5%" /> &nbsp; Les fichiers source ont en général l'extension ``.cpp`` (mais parfois ``.cxx``, ``.cc``, ...) et les fichiers d'en-tête l'extension ``.hpp`` (ou ``.h``, ``.hxx``, ...).
 
 ## En-têtes de fichiers
 
@@ -35,7 +45,7 @@ Les noms d'en-tête de la librairie standard en C, de type ``<name.h>``, sont re
 #include <cmath>
 ```
 
-Les headers hérités du C ``<name.h>`` peuvent ne pas compiler en C++, et tout leur contenu est dans *l'espace de nom* (*namespace*) global, ce qui peut causer des incompatibilités de noms.  
+<img src="../../figures/ISO_CPP_Logo.svg" width="5%" /> &nbsp; Les headers hérités du C ``<name.h>`` peuvent **ne pas compiler** en C++, et tout leur contenu est dans *l'espace de nom* (*namespace*) global, ce qui peut causer des incompatibilités de noms.  
 Leur version C++ ``<cname>`` contient strictement les mêmes variables, fonctions, et types, adaptés au C++ et placés dans l'espace de noms ``std``.
 
 Les fichiers d'en-tête exclusifs au C++ n'ont pas de préfixe ``c`` :
@@ -49,13 +59,13 @@ Les fichiers d'en-tête exclusifs au C++ n'ont pas de préfixe ``c`` :
 
 ## Pointeur nul
 
-En C, la macro ``NULL`` qui désigne le pointeur nul est simplement un ``#define NULL 0`` dans ``<stdlib.h>``.
+<img src="../../figures/C1stEdition.svg" width="4%" /> &nbsp;&nbsp;&nbsp; La macro ``NULL`` qui désigne le pointeur nul est simplement un ``#define NULL 0`` dans ``<stdlib.h>``.
 
-En C++, on préfère utiliser le mot-clé ``nullptr``, dont le type est vérifié à la compilation (il est de type pointeur, et ne peut pas être converti implicitement en ``0``).
+<img src="../../figures/ISO_CPP_Logo.svg" width="5%" /> &nbsp; En C++, on préfère utiliser le mot-clé ``nullptr``, dont le type est vérifié à la compilation (il est de type pointeur, et ne peut pas être converti implicitement en ``0``).
 
 ## Définition de constante
 
-En C, les constantes connues à la compilation sont en général définies par une instruction de préprocesseur.
+<img src="../../figures/C1stEdition.svg" width="4%" /> &nbsp;&nbsp;&nbsp; Les constantes connues à la compilation sont en général définies par une **instruction de préprocesseur** (``#define``).
 
 **Taille d'un tableau :**
 ```C
@@ -83,7 +93,7 @@ Color c = RED;
 
 L'inconvénient est que cette macro n'est qu'une **substitution textuelle**. ``RED`` n'est pas une variable, elle n'a pas d'adresse, son type n'est pas vérifié, et l'on encourt des erreurs de syntaxe si l'on omet les parenthèses.
 
-En C++, on utilisera plutôt le mot-clé ``constexpr``.
+<img src="../../figures/ISO_CPP_Logo.svg" width="5%" /> &nbsp; En C++, on utilisera plutôt le mot-clé ``constexpr``.
 
 ```C++
 struct Color {
@@ -103,7 +113,7 @@ int t[size]; // Autorisé
 
 # Entrées / Sorties
 
-## En C :
+## <img src="../../figures/C1stEdition.svg" width="6%" />
 
 Les opérations d'entrée-sortie sont réalisées par le biais de l'en-tête ``<stdio.h>`` et ses fonctions ``printf``, ``scanf`` ou de manière plus sécurisée ``fgets``.
 
@@ -147,7 +157,7 @@ int main() {
 }
 ```
 
-## En C++ :
+## <img src="../../figures/ISO_CPP_Logo.svg" width="8%" />
 
 Les opérations d'entrée-sorties sont réalisées avec les opérateurs ``>>`` et ``<<`` et les entrées et sorties standards ``std::cin`` et ``std::cout`` inclues dans l'en-tête ``<iostream>``.
 
@@ -235,9 +245,9 @@ std::getline(std::cin, name);
 
 # ``struct``
 
-## En C :
+## <img src="../../figures/C1stEdition.svg" width="6%" />
 
-Le mot-clé ``struct`` doit être répété à chaque mention d'un type ``struct``, ce qui est très fastidieux. On utilise donc des alias (``typedef``) pour immédiatement renommer notre structure :
+Le mot-clé ``struct`` doit être répété à chaque mention d'un type ``struct``, ce qui est très fastidieux. On utilise donc des [**alias**](#alias-de-types) (``typedef``) pour immédiatement renommer notre structure :
 
 ```C
 // Par défaut :
@@ -282,9 +292,9 @@ S s = { 5, 2.5f };
 S s = { .a = 5, .b = 2.5f };
 ```
 
-## En C++ :
+## <img src="../../figures/ISO_CPP_Logo.svg" width="8%" />
 
-Une ``struct`` est identique à une classe : elle peut donc contenir des membres (variables), mais également des méthodes (fonctions), contrairement au C. Dans une ``struct`` tous les membres et les méthodes sont publics par défaut.
+Une ``struct`` est identique à une classe : elle peut donc contenir des **membres** (variables), mais également des **méthodes** (fonctions), contrairement au C. Dans une ``struct`` tous les membres et les méthodes sont **publics** par défaut.
 
 Pas besoin de ``typedef`` ici, le mot-clé ``struct`` n'a pas à être répété avant le nom de la structure :
 
@@ -339,6 +349,8 @@ struct A {
 
 # ``enum``
 
+## <img src="../../figures/ISO_CPP_Logo.svg" width="8%" />
+
 De même, les ``enum`` en ``C++`` n'ont plus besoin de leur mot-clé ``enum`` :
 ```C++
 /* C */
@@ -388,7 +400,7 @@ int a = Green + Blue; // Interdit -> erreur de compilation
 
 # Conversions / *cast*
 
-## En C :
+## <img src="../../figures/C1stEdition.svg" width="6%" />
 
 La notation courante pour une conversion de type **explicite** (*cast*) d'un type ``A`` vers un type ``B`` est la suivante :
 ```C
@@ -399,7 +411,7 @@ B b = (B) a;
     // et que l'on stocke dans la variable b
 ```
 
-** Exemple :**
+**Exemple :**
 ```C
 int a = 5;
 float x = a; // Cast implicite int -> float : x == 5.0f
@@ -432,7 +444,7 @@ int main() {
 }
 ```
 
-## En C++ :
+## <img src="../../figures/ISO_CPP_Logo.svg" width="8%" />
 
 On utilise plutôt l'opérateur ``static_cast`` afin d'expliciter les conversions le plus possible.
 
@@ -501,7 +513,7 @@ int c = std::bit_cast<int>(x);
 
 # Allocation mémoire
 
-## En C :
+## <img src="../../figures/C1stEdition.svg" width="6%" />
 
 Les allocations dynamiques sont réalisées avec la fonction ``malloc``, de l'en-tête ``<stdlib.h>``, et la mémoire est libérée avec la fonction ``free``.
 
@@ -543,7 +555,7 @@ void * calloc( size_t elementCount, size_t elementSize );
 int * array = calloc(10, sizeof(int));
 ```
 
-## En C++ :
+## <img src="../../figures/ISO_CPP_Logo.svg" width="8%" />
 
 On peut allouer dynamiquement un objet d'un type ``T`` quelconque avec l'opérateur ``new``. On libère la mémoire avec l'opérateur ``delete``.
 
@@ -651,14 +663,16 @@ On observe ici les 3 appels au constructeur par défaut à la création du table
 
 # Pointeurs
 
-En C, l'usage des pointeurs est une grande source de vulnérabilités :   
-- Il n'y a aucune garantie qu'un pointeur contient **l'adresse d'une variable valide**. Un pointeur peut être nul (contient ``NULL`` = ``0x0``) ou pointer vers une adresse invalide (ou libérée), et ne doit pas être déréférencé (sous peine de crash du programme).
+## <img src="../../figures/C1stEdition.svg" width="6%" />
+L'usage des pointeurs est une grande source de vulnérabilités :   
+
+- Il n'y a aucune garantie qu'un pointeur contient **l'adresse d'une variable valide**. Un pointeur peut être nul (il contient ``NULL`` = ``0x0``) ou pointer vers une adresse invalide (ou libérée), et ne doit pas être déréférencé (sous peine de crash du programme).
 - Si une plage allouée avec ``malloc`` n'est référencée que par un seul pointeur, et que ce pointeur est perdu, il n'est plus possible de libérer la plage : on a alors une **fuite mémoire**.
 - On peut également oublier de libérer manuellement la mémoire, surtout lorsque beaucoup d'allocations ont lieu.
 
 Le C++ introduit diverses méthodes pour y remédier.
 
-## Références
+## <img src="../../figures/ISO_CPP_Logo.svg" width="8%" /> Références
 
 Une **référence** est équivalente à un pointeur toujours déréférencé. Sa syntaxe est plus légère que les pointeurs traditionnels (pas de ``*``, ``&`` et ``->``), et ils ont l'avantage de toujours pointer vers une variable valide.
 
@@ -745,9 +759,9 @@ void f(A& a) {
 }
 ```
 
-## Destructeurs
+## <img src="../../figures/ISO_CPP_Logo.svg" width="8%" /> Destructeurs
 
-Lorsque l'on souhaite allouer de la mémoire sans risquer d'oublier d'appeler l'opérateur de libération (``delete``), il est conseillé confier cette tâche à un destructeur qui est appelé automatiquement lorsqu'un objet a terminé sa durée de vie (lorsqu'il sort du *scope*).
+Lorsque l'on souhaite allouer de la mémoire sans risquer d'oublier d'appeler l'opérateur de libération (``delete``), il est conseillé confier cette tâche à un destructeur qui est **appelé automatiquement** lorsqu'un objet a terminé sa durée de vie (lorsqu'il sort du *scope*).
 
 On crée pour cela une classe qui encapsule notre structure, et qui s'occupe d'allouer et de désallouer la mémoire automatiquement. On appelle ce genre de classe *handle* en anglais.
 
@@ -758,12 +772,12 @@ class Array {
     int* data = nullptr; // Valeurs par défaut
     int size  = 0;
 
-    Array(int n) {
+    Array(int n) { // Constructeur
         size = n;
         data = new int[size];
     }
 
-    ~Array() {
+    ~Array() { // Destructeur
         delete[] data;
         data = nullptr;
         size = 0;
@@ -772,7 +786,7 @@ class Array {
 
 void f() {
 
-    Array arr(20);
+    Array arr(20); // Appelle le constructeur
 
     for (int i = 0; i < arr.size; i++) {
         // ...
@@ -796,7 +810,7 @@ void f() {
 }
 ```
 
-## Pointeurs intelligents (*smart pointers*)
+## <img src="../../figures/ISO_CPP_Logo.svg" width="8%" /> Pointeurs intelligents (*smart pointers*)
 
 Lorsque l'on souhaite allouer un seul objet sur le tas, il est préférable de stocker l'adresse renvoyée dans un **pointeur intelligent** (*smart pointer*), qui s'occupera de libérer la ressource lorsque l'objet aura terminé sa durée de vie.
 
@@ -927,7 +941,7 @@ class unique_ptr {
 
 # Alias de types
 
-## En C :
+## <img src="../../figures/C1stEdition.svg" width="6%" />
 
 On utilise le mot-clé ``typedef`` pour donner un alias à un type existant ou une structure.
 
@@ -948,7 +962,7 @@ typedef struct {
 } t_list;
 ```
 
-## En C++ :
+## <img src="../../figures/ISO_CPP_Logo.svg" width="8%" />
 
 On utilise plutôt la syntaxe ``using`` :
 

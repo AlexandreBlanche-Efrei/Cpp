@@ -1,0 +1,90 @@
+---
+title: "Démarrer un défi CodinGame"
+---
+
+Dans cet article, je commente les étapes de la résolution d'un problème CodinGame, ici "*Unary*".
+
+![_](../../../figures/CodinGame/CodinGame_01_challenge.png){width=90%}
+
+# Code de base
+
+CodinGame fournit toujours une base de code, qui gère les entrées :
+
+![_](../../../figures/CodinGame/CodinGame_02_codebase.png){width=70%}
+
+Dans le code ci-dessus, on peut observer :
+
+- ``#include<...>`` : L'inclusion de plusieurs **librairies standards** : ``vector``, ``string``, ``iostream`` (pour les entrées-sorties).
+
+- ``using namespace std;`` : Cette instruction permet d'**omettre le préfixe** ``std::`` avant les types et fonctions de la librairie standard. On peut donc par exemple écrire ``string`` au lieu de ``std::string``.
+
+- ``getline(cin, message)`` : La gestion de la saisie de l'entrée, dans une **string** ``message``.
+
+- ``cout << "answer" << endl;`` : L'**affichage** de la sortie, à modifier. Le saut de ligne ``endl`` est obligatoire.
+
+La page CodinGame possède également un jeu de **tests automatiques**, à activer individuellement, ou via le bouton **Tous les tests**.
+
+Nous ne cliquerons sur le bouton **Soumettre** qu'une fois que les tests seront validés.
+
+# Résolution
+
+Je ne commente pas ici le raisonnement derrière ma solution, je donne juste quelques remarques sur son implémentation.
+
+## Fonction main
+
+Dans ce problème, nous devons encoder les bits d'une chaîne de caractère en une suite de ``0`` et d'espaces. Je procède donc en deux étapes :
+
+1. Construire un tableau des bits à encoder : j'utilise un [**``vector<char>``**](vector.qmd), dans lequel je vais ajouter des ``0`` et des ``1``. J'utilise une boucle ***for-each*** sur les caractères de la chaîne ``message``, pour appliquer à chaque caractère ``c`` de ``message`` ma fonction ``add_bits_to_array`` (voir plus bas).
+
+2. Construire la chaîne encodée : j'utilise une [**``string``**](string.qmd) ``res``, que j'affiche avec ``cout << res << endl;`` (voir fiche [``cin-cout``](cin-cout.qmd))
+
+![_](../../../figures/CodinGame/CodinGame_03_main.png){width=40%}
+
+## Construction du tableau
+
+J'écris une fonction ``add_bits_to_array``, qui ajoute les 7 bits de la représentation ASCII d'un caractère ``c`` au vector ``bits``.
+
+![_](../../../figures/CodinGame/CodinGame_04_addbits.png){width=60%}
+
+- Ma fonction prend le vector ``bits`` **par référence** (avec un ``&``) : le vector défini dans la fonction ``main`` est modifié par ma fonction (sans avoir à utiliser de pointeur).
+
+- Je crée un ``std::array<char, 7>`` pour stocker les bits du caractère ``c``, avant de les ajouter au vector ``bits``. Un ``array`` est un tableau statique, équivalent à ``char t[7]``. Un ``vector<char> t(7)`` aurait également fonctionné.
+
+- J'effectue une boucle ***for-each***, pour parcourir les éléments de ``char_bits``.
+
+- J'ajoute mes éléments à la fin de ``bits`` via la méthode ``push_back()``.
+
+## Encodage de la séquence de bits
+
+![_](../../../figures/CodinGame/CodinGame_05_encode.png){width=60%}
+
+- Je prends le [**vector**](vector.qmd) ``bits`` en entrée **par référence**, avec un **``&``** à la suite du type, pour éviter de le copier au moment de l'appel de la fonction. Comme il n'est **pas modifié**, j'aurais même pu l'appeler par référence ``const`` :   
+
+   ```C++
+   string encode_array(const std::vector<char>& bits) {
+   ```
+
+- Je crée une [**string**](string.qmd) ``res``, initialement ``""``, et j'y concatène des chaînes avec l'opérateur ``+=``.
+
+- J'utilise **``bits.size()``** pour obtenir la taille du vector ``bits``. Cette fonction est efficace, il s'agit d'une manière standard de parcourir un vector.
+
+- J'utilise **l'opérateur ternaire** au début de ma boucle : ``(bits[i] == 1) ? "0 " : "00 "`` est une expression qui vaut ``"0 "`` si la condition ``(bits[i] == 1)`` est vraie, et ``"00 "`` sinon. Cette syntaxe permet d'écrire un ``if`` de manière plus compacte.
+
+# Validation
+
+Une fois mon code écrit, je clique sur **Tous les tests**, et j'observe que ma fonction les valide tous. Je peux alors cliquer sur **Soumettre**, et obtenir mon score final.
+
+![_](../../../figures/CodinGame/CodinGame_06_tests.png)
+
+# Débuggage
+
+Si je souhaite réaliser des affichages, par exemple la valeur de mes variables, je peux utiliser le flux ``std::cerr`` :
+
+```C++
+cerr << "bits = ";
+for (char b : bits)
+    cerr << b;
+cerr << endl;
+```
+
+Ces affichages apparaîtront dans la console au moment des tests, sans impacter l'affichage de la réponse (par le flux [``std::cout``](cin-cout.qmd)).

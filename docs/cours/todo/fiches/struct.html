@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EFREI Algo Team - Tutoriel C++</title>
+<title>struct – Tutoriel C++</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./figures/efrei_pantheon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../figures/efrei_pantheon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -81,10 +81,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">EFREI Algo Team - Tutoriel C++</span>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Tutoriel C++</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -99,31 +99,16 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-fiches-daide">    
         <li>
-    <a class="dropdown-item" href="./cours/fiches/codingame.html">
- <span class="dropdown-text">Démarrer un défi CodinGame</span></a>
+    <a class="dropdown-item" href="../../../cours/fiches/vector.html">
+ <span class="dropdown-text">Le conteneur <strong><code>vector</code></strong></span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./cours/fiches/vector.html">
- <span class="dropdown-text">Le conteneur <strong>vector</strong></span></a>
+    <a class="dropdown-item" href="../../../cours/fiches/string.html">
+ <span class="dropdown-text">Le type <code>string</code> : les chaînes de caractères</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./cours/fiches/string.html">
- <span class="dropdown-text">Le type <strong>string</strong> : les chaînes de caractères</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./cours/fiches/cin-cout.html">
- <span class="dropdown-text">Les entrées-sorties : <strong>cin</strong> - <strong>cout</strong></span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-articles-détaillés" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Articles détaillés</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-articles-détaillés">    
-        <li>
-    <a class="dropdown-item" href="./cours/bases/differences_c.html">
- <span class="dropdown-text">Les différences de syntaxe entre C et C++</span></a>
+    <a class="dropdown-item" href="../../../cours/fiches/cin-cout.html">
+ <span class="dropdown-text">Les entrées-sorties : <code>cin</code>-<code>cout</code></span></a>
   </li>  
     </ul>
   </li>
@@ -139,66 +124,18 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
-<p><img src="./figures/AlgoTeam.png" class="img-fluid"></p>
+<p><img src="../../../figures/AlgoTeam.png" class="img-fluid"></p>
 </div></div>
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#fiches-introductives" id="toc-fiches-introductives" class="nav-link active" data-scroll-target="#fiches-introductives">Fiches introductives</a></li>
-  <li><a href="#articles-détaillés" id="toc-articles-détaillés" class="nav-link" data-scroll-target="#articles-détaillés">Articles détaillés</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">EFREI Algo Team - Tutoriel C++</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
 
-
-<p>Bienvenue dans le tutoriel de C++ de l’EFREI Algo Team ! Vous y trouverez des aides pour démarrer, ainsi que des articles plus détaillés pour découvrir les notions plus avancées du langage.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/ISO_CPP_Logo.svg" class="img-fluid figure-img" style="width:30.0%"></p>
-<figcaption>_</figcaption>
-</figure>
-</div>
-<section id="fiches-introductives" class="level1">
-<h1>Fiches introductives</h1>
-<p>Pour résoudre des problèmes d’algorithmiques en C++, les notions suivantes vous seront utiles !</p>
-<ul>
-<li><p><a href="./cours/fiches/codingame.html"><strong>Résoudre un défi CodinGame</strong></a> : un exemple résolution d’un défi CodinGame, avec entrées-sorties, conteneurs, fonctions de traitement et affichage du résultat.</p></li>
-<li><p><a href="./cours/fiches/vector.html"><strong>Le conteneur <code>vector</code></strong></a> : bien meilleur que les tableaux classiques du C, il connaît sa propre taille et se redimensionne automatiquement !</p></li>
-<li><p><a href="./cours/fiches/cin-cout.html"><strong>Les entrées-sorties <code>cin</code>-<code>cout</code></strong></a> : pour demander des valeurs à l’utilisateur, et afficher vos résultats.</p></li>
-<li><p><a href="./cours/fiches/string.html"><strong>Le type <code>string</code></strong></a> : pour gérer vos chaînes de caractères en toute simplicité.</p></li>
-</ul>
-</section>
-<section id="articles-détaillés" class="level1">
-<h1>Articles détaillés</h1>
-<p>Si vous souhaitez approfondir votre connaissance du langage, vous pouvez consulter les articles détaillés ci-dessous :</p>
-<ul>
-<li><p><a href="./cours/bases/differences_c.html"><strong>Différences de syntaxe entre C et C++</strong></a> : à destination des programmeurs C. Découvrez les différences principales du C++ avec le C, et les nombreux avantages qu’il comporte.</p></li>
-<li><p><em>(D’autres articles à venir)</em></p></li>
-</ul>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

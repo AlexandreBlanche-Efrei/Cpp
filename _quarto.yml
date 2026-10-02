@@ -6,14 +6,20 @@ execute:
   freeze: auto
 
 website:
-  title: "Tutoriel C++"
+  title: "EFREI Algo Team - Tutoriel C++"
   navbar:
     search: true
     left:
       - text: Fiches d'aide
         menu:
-          - href: cours/vignettes/vector.qmd
-      
+          - href: cours/fiches/codingame.qmd
+          - href: cours/fiches/vector.qmd
+          - href: cours/fiches/string.qmd
+          - href: cours/fiches/cin-cout.qmd
+      - text: Articles détaillés
+        menu:
+          - href: cours/bases/differences_c.qmd
+
   favicon: figures/efrei_pantheon.png
 
 format:

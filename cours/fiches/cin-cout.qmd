@@ -1,0 +1,102 @@
+---
+title: "Les entrées-sorties : **cin** - **cout**"
+---
+
+Les entrées-sorties en C++ sont gérées par les *flux* (*streams*) d'entrée ``std::cin`` et de sortie ``std::cout``. Leur utilisation est bien plus simple que les ``printf`` et ``scanf`` du langage C.
+
+# Affichages
+
+```C++
+#include <iostream> // inclure la librairie d'entrées-sorties <iostream>
+
+int main() {
+
+    std::cout << "Hello world!" << std::endl;
+}
+```
+```
+Hello world!
+```
+
+L'instruction ci-dessus affiche la chaîne de caractères ``"Hello world!"`` dans la console.
+
+- **``std::cout``** est le **flux de sortie** (*out channel*), correspondant à l'affichage dans la console
+- On lui envoie des informations à afficher avec **l'opérateur ``<<``**.
+- ``std::endl`` permet de sauter une ligne après l'affichage.
+
+On peut également afficher le **contenu de variables**, de manière très simple :
+
+```C++
+int a = 3;
+double x = 2.5;
+std::cout << "a = " << a << ", x = " << x << std::endl;
+```
+```
+a = 3, x = 2.5
+```
+
+Remarquez que le **type** des variables a été déduit automatiquement à la compilation !  
+Finis les ``printf("a = %d, x = %lf\n", a, x);`` du C, où l'on devait spécifier manuellement le type de chaque variable.
+
+
+# Saisies
+
+```C++
+#include <iostream>
+
+int main() {
+
+    std::cout << "Saisissez deux entiers a, b : ";
+
+    // Déclaration de deux variables à remplir
+    int a, b;
+    std::cin >> a >> b;
+
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+}
+```
+
+L'instruction ``std::cin >> a >> b`` va attendre que l'utilisateur ait saisi deux entiers dans la console.
+
+```
+Saisissez deux entiers a, b : 2 8
+a = 2, b = 8
+```
+
+- **``std::cin``** est le **flux d'entrée** (*input channel*), correspondant à la saisie dans la console.
+- L'opérateur **``>>``** (vers la droite) permet de transférer les valeurs de ``cin`` vers les variables spécifiées.
+
+De même que pour les entrées, les **types** sont déduits automatiquement à la compilation.  
+Plus besoin de ``scanf("%d %d", &a, &b);``, non seulement nous n'avons plus besoin de spécifier le type, mais en plus nous n'avons pas besoin de donner **l'adresse** de ``a`` et ``b`` : les variables sont prises par **référence** et modifiées directement.
+
+# Exemple : saisie de chaîne de caractères
+
+```C++
+#include <iostream>
+#include <string>
+
+int main() {
+    // Saisie simple (un seul mot)
+    std::cout << "Quel est votre nom ? ";
+    
+    std::string s;
+    std::cin >> s;
+
+    std::cout << "Bonjour " << s << " !" << std::endl;
+
+    // Saisie d'une ligne
+    std::cout << "\nSaisissez votre prénom et votre prénom : ";
+    
+    std::string line;
+    std::getline(std::cin, line);
+
+    std::cout << "Vous avez saisi : " << line << std::endl;
+}
+```
+```
+Quel est votre nom ? Bob
+Bonjour Bob !
+
+Saisissez votre prénom et votre prénom : Jean Dupont
+Vous avez saisi : Jean Dupont
+```
