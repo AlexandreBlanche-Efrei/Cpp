@@ -16,6 +16,8 @@ website:
           - href: cours/fiches/vector.qmd
           - href: cours/fiches/string.qmd
           - href: cours/fiches/cin-cout.qmd
+          - href: cours/fiches/enum.qmd
+          - href: cours/fiches/optional.qmd
       - text: Articles détaillés
         menu:
           - href: cours/bases/differences_c.qmd

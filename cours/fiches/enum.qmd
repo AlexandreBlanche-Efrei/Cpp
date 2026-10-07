@@ -1,0 +1,128 @@
+---
+title: "Les types **enum**"
+---
+
+En C comme en C++, un type ``enum`` est un type possèdant un ensemble fixé de valeurs possibles.
+
+```C++
+enum person_type {
+    Student, Teacher, Staff, Director
+};
+
+// ...
+
+person_type p = Student;
+```
+
+::: {.callout-warning}
+Comme pour les ``struct``, **ne pas oublier le point-virgule ``;``** après la définition d'un type ``enum``.
+:::
+
+Une variable de type ``person_type`` est similaire à un ``int`` : ``Student`` vaut ``0``, ``Teacher`` vaut ``1``, etc.
+
+Un ``enum`` est particulièrement adapté aux blocs **switch**, pour traiter séparément les valeurs :
+
+```C++
+enum failure {
+    BadAlloc, SegFault, Timeout
+};
+
+void print_error_message(failure f) {
+
+    std::string msg;
+    
+    switch (f) {
+        case BadAlloc: {
+            msg = "Bad allocation error";
+            break;
+        }
+
+        case SegFault: {
+            msg = "Segmentation fault";
+            break;
+        }
+
+        case Timeout: {
+            msg = "The operation has timed out";
+            break;
+        }
+        
+        default: { // Par sécurité, si l'on ajoute des valeurs au type
+            msg = "An unexpected error has occurred";
+            break;
+        }
+    }
+    std::cout << msg << std::endl;
+}
+
+int main() {
+    print_error_message(SegFault);
+}
+```
+```
+Segmentation fault
+```
+
+
+::: {.callout-note}
+Il est également possible de définir une valeur exacte à chaque élément :
+
+```C++
+enum item {
+    A = 10, B = 20, C = 100
+};
+
+// ...
+item e1 = A;
+item e2 = B;
+printf("e1 + e2 = %d\n", e1 + e2);
+// Affiche 30
+```
+:::
+
+# Utilisation
+
+Un ``enum`` permet également de **clarifier le code**, en explicitant les valeurs prises en entrée et renvoyées en sortie des fonctions. En particulier, ils peuvent **remplacer les ``bool``** dans un grand nombre de cas ! Il s'agit d'une **bonne pratique de code** !
+
+Dans un code complexe, un ``return true;`` peut être difficilement lisible. Il ne faut pas hésiter à créer un ``enum``, pour écrire du code aussi explicite que possible :
+
+```C++
+enum search_result {
+    NotFound, Found
+};
+
+search_result search(const std::vector<int>& v, int val) {
+    for (int x : v) {
+        if (x == val) {
+            return Found;
+        }
+    }
+    return NotFound;
+}
+```
+
+```C++
+
+// Obscur, à éviter :
+void set_settings(bool draw, bool measure, int update);
+// ...
+set_settings(true, false, 1);
+
+// --------------------------------------
+// Bien mieux :
+enum draw_setting {
+    Draw, DoNotDraw
+};
+
+enum measure_setting {
+    MeasureOn, MeasureOff
+};
+
+enum update_counter_setting {
+    UpdateAll, UpdateOnce, DoNotUpdate
+};
+
+void set_settings(draw_setting draw, measure_setting measure, update_counter_setting update_count);
+// ...
+set_settings(Draw, MeasureOff, UpdateOnce); // beaucoup plus clair !
+```

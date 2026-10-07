@@ -1,0 +1,88 @@
+---
+title: "Le conteneur **optional**"
+---
+
+Le type ``optional<T>`` permet de stocker un objet d'un type ``T`` quelconque, ou **aucun objet** : il vaut alors ``std::nullopt``. L'objet contenu dans le ``optional`` est stocké en place, il ne s'agit pas d'un pointeur.
+
+```C++
+#include <optional>
+// ...
+
+std::optional x_opt;
+// x.has_value() == false
+// x_opt == std::nullopt
+
+
+x_opt = 5;
+// x.has_value() == true
+// x_opt.value() vaut 5
+
+if (x.has_value()) {
+    std::cout << "x = " << x.value() << std::endl;
+}
+```
+
+Cela peut s'avérer utile dans de nombreuses situations :
+
+- Lorsque **la valeur *"Aucune valeur"* est une possibilité :**   
+
+    ```C++
+    #include <optional>
+
+    // Returns the index of the first occurrence of val in v, or std::nullopt
+    std::optional<int> index(const std::vector<int>& v, int val) {
+        for (int i = 0; i < v.size(); i++) {
+            if (v[i] == val)
+                return i;
+        }
+        return std::nullopt;
+    }
+
+    int main() {
+        std::vector<int> v = { 1, 3, 4, 8, 12 };
+        
+        int x = 5;
+        std::optional<int> i_val = index(v, x);
+        if (not i_val.has_value())
+            std::cout << x << " not found" << std::endl;
+        else
+            std::cout << x << " is at index " << i_val.value() << std::endl;
+    }
+    ```
+
+- Pour éviter **les valeurs par défaut** qui peuvent être confondues avec une valeur valide :
+
+    ```C++
+    // A éviter :
+
+    int n = -1; // Valeur par défaut
+    for (int x : v) {
+        if (p(x))
+            n = x;
+    }
+    if (n != -1) // Maladroit
+        std::cout << "Found: " << n << std::endl;
+
+
+    // Mieux :
+
+    std::optional<int> n;
+    for (int x : v) {
+        if (p(x))
+            n = x;
+    }
+    if (n.has_value()) // Plus explicite
+        std::cout << "Found: " << n.value() << std::endl;
+    ```
+
+- Pour fournir des **arguments optionnels** à une fonction :
+
+    ```C++
+    void f(int x, std::optional<Param> param_opt) {
+        // ...
+
+        if (param_opt.has_value()) {
+            // faire quelque-chose avec param_opt.value()
+        }
+    }
+    ```

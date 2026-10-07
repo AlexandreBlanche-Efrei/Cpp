@@ -4,3 +4,4 @@ cours/todo
 
 /.quarto/
 **/*.quarto_ipynb
+test_cpp

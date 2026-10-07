@@ -19,6 +19,10 @@ Pour résoudre des problèmes d'algorithmiques en C++, les notions suivantes vou
 
 - [**Le type ``string``**](cours/fiches/string.qmd) : pour gérer vos chaînes de caractères en toute simplicité.
 
+- [**Les types ``enum``**](cours/fiches/enum.qmd) : pour écrire du code aussi clair et explicite que possible.
+
+- [**Le conteneur ``optional``**](cours/fiches/optional.qmd) : lorsque la valeur *aucune valeur* est une option.
+
 
 # Articles détaillés
 
