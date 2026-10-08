@@ -1,0 +1,151 @@
+---
+title: "Les types **struct**"
+---
+
+En C comme en C++, un *type structuré*, défini par le mot-clé ``struct``, est un type dont les membres contiennent plusieurs variables, appelées *champs* (*fields*).
+
+```C++
+struct date {
+    int day;
+    int month;
+    int year;
+};
+```
+
+::: {.callout-warning}
+Comme pour les ``enum``, **ne pas oublier le point-virgule ``;``** après la définition d'un type ``struct``.
+:::
+
+On accède aux champs, ici ``day``, ``month``, ``year`` avec la syntaxe ``.`` :
+
+```C++
+date d = { 31, 12, 1999 };
+
+// Modif de d
+d.year = 2000;
+
+std::cout << d.day << " / " << d.month << " / " << d.year << std::endl;
+// 31 / 12 / 2000
+```
+
+Depuis la version C++20, il est aussi possible de donner le nom des membres lors de l'initialisation :
+
+```C++
+struct Person {
+    std::string name;
+    date birth_date;
+    int number;
+};
+
+int main() {
+
+    date d = { 31, 12, 1999 };
+
+    Person p = { .name = "Bob", .birth_date = d, .number = 1124 };
+
+    std::cout << p.name << std::endl;
+    // Affiche : Bob
+}
+```
+
+## Copie et passage en paramètre d'une fonction
+
+Lorsque l'on copie une variable de type ``struct`` dans une autre variable, ses champs sont copiés un par un.
+
+```C++
+S x1 = { 1, 2, 3 };
+S x2 = x1; // copie de 3 int
+```
+
+Ainsi, lorsque l'on passe un objet de type ``struct`` en paramètre d'une fonction, ses champs vont être **copiés** dans une variable locale, à chaque appel :
+
+```C++
+void f(S x) {
+    // ...
+}
+
+int main() {
+    S x1 = { 1, 2, 3 };
+    f(x1); // copie des 3 champs de x1 dans la variable locale x de f
+}
+```
+
+Cela peut devenir **très coûteux**, si les variables possèdent beaucoup de champs !
+
+La solution en C est d'utiliser un passage par pointeur, et en C++ **un passage par référence** :
+
+```C++
+void f(S& x) { // x est une référence : pas de copie des champs
+    x.a = 0; // modification du champ a du x1 original
+}
+
+int main() {
+    S x1 = { 1, 2, 3 };
+    f(x1); // Même syntaxe lors de l'appel, pas de copie
+}
+```
+
+Si l'on souhaite passer un objet volumineux par référence, tout en voulant s'assurer de ne **pas pouvoir modifier** l'objet original (par sécurité !), on utilise un passage par ``const &`` (référence ``const``) :
+
+```C++
+void g(const S& x) {
+
+    // x.a = 0; // <- Erreur : accès uniquement en lecture
+
+    std::cout << "a = " << x.a << std::endl; // Ok
+}
+```
+
+Il est **recommandé** de passer toutes les ``struct`` **par référence**, et dès que possible par référence ``const``.
+
+
+## *Structured bindings*
+
+Depuis C++17, il est possible de **nommer directement chaque champ** d'un ``struct``, pour une manipulation plus facile, grâce au mot-clé ``auto`` suivi de ``[ ]`` :
+
+```C++
+
+struct S {
+    int a, b, c;
+}
+
+// A l'ancienne : s.a, s.b, s.c
+S x;
+int sum = s.a + s.b + s.c;
+
+// Structured binding :
+auto [ a, b, c ] = x;
+int sum = a + b + c;
+
+// ou ici : const auto [ a, b, c ] = x;
+```
+
+Pour avoir un accès en **lecture / écriture** aux membres de l'objet, on utilise la syntaxe ``auto&`` :
+
+```C++
+// A l'ancienne :
+S x;
+s.a = 1;
+s.b = 2;
+s.c = s.a + s.b;
+
+// Structured binding :
+auto& [ a, b, c ] = x;
+a = 1;
+b = 2;
+c = a + b;
+```
+
+Si l'on souhaite avec un accès par référence ``&`` (par exemple si l'objet est volumineux) sans risque de le modifier, on effectue un binding par ``const auto &`` :
+
+```C++
+const auto& [ name, birth_date, number ] = p;
+std::cout << name << " : " << number << std::endl;
+```
+
+Depuis C++26, on peut (mais pas encore dans tous les compilateurs...) utiliser ``_`` pour signifier que l'on ne souhaite pas donner de nom à l'un des champs :
+
+```C++
+const auto& [ name, _, _ ] = p;
+std::cout << name << std::endl;
+```
