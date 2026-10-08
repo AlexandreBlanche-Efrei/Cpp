@@ -2,31 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/index.html</loc>
-    <lastmod>2026-10-07T20:26:40.734Z</lastmod>
+    <lastmod>2026-10-08T12:11:37.281Z</lastmod>
   </url>
   <url>
     <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/fiches/optional.html</loc>
     <lastmod>2026-10-07T20:23:29.675Z</lastmod>
   </url>
   <url>
-    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/fiches/enum.html</loc>
-    <lastmod>2026-10-07T20:18:36.501Z</lastmod>
+    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/fiches/cin-cout.html</loc>
+    <lastmod>2026-10-02T19:47:44.107Z</lastmod>
   </url>
   <url>
-    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/fiches/codingame.html</loc>
-    <lastmod>2026-10-02T20:11:27.854Z</lastmod>
+    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/fiches/vector.html</loc>
+    <lastmod>2026-10-02T19:47:44.108Z</lastmod>
   </url>
   <url>
-    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/librairies/conteneurs.html</loc>
-    <lastmod>2026-07-28T20:08:44.496Z</lastmod>
+    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/librairies/librairies_utiles.html</loc>
+    <lastmod>2026-07-28T20:13:09.729Z</lastmod>
   </url>
   <url>
-    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/poo/heritage.html</loc>
-    <lastmod>2026-07-28T20:11:49.804Z</lastmod>
+    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/librairies/vector.html</loc>
+    <lastmod>2026-07-28T20:06:32.331Z</lastmod>
   </url>
   <url>
-    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/fiches/references.html</loc>
-    <lastmod>2026-10-02T16:21:43.472Z</lastmod>
+    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/poo/classes.html</loc>
+    <lastmod>2026-07-28T20:11:30.318Z</lastmod>
   </url>
   <url>
     <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/fiches/matrices.html</loc>
@@ -57,28 +57,28 @@
     <lastmod>2026-07-28T20:09:55.328Z</lastmod>
   </url>
   <url>
-    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/fiches/struct.html</loc>
-    <lastmod>2026-10-07T20:00:19.887Z</lastmod>
+    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/fiches/references.html</loc>
+    <lastmod>2026-10-02T16:21:43.472Z</lastmod>
   </url>
   <url>
-    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/poo/classes.html</loc>
-    <lastmod>2026-07-28T20:11:30.318Z</lastmod>
+    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/poo/heritage.html</loc>
+    <lastmod>2026-07-28T20:11:49.804Z</lastmod>
   </url>
   <url>
-    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/librairies/vector.html</loc>
-    <lastmod>2026-07-28T20:06:32.331Z</lastmod>
+    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/librairies/conteneurs.html</loc>
+    <lastmod>2026-07-28T20:08:44.496Z</lastmod>
   </url>
   <url>
-    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/todo/librairies/librairies_utiles.html</loc>
-    <lastmod>2026-07-28T20:13:09.729Z</lastmod>
+    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/fiches/codingame.html</loc>
+    <lastmod>2026-10-02T20:11:27.854Z</lastmod>
   </url>
   <url>
-    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/fiches/vector.html</loc>
-    <lastmod>2026-10-02T19:47:44.108Z</lastmod>
+    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/fiches/enum.html</loc>
+    <lastmod>2026-10-07T20:18:36.501Z</lastmod>
   </url>
   <url>
-    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/fiches/cin-cout.html</loc>
-    <lastmod>2026-10-02T19:47:44.107Z</lastmod>
+    <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/fiches/struct.html</loc>
+    <lastmod>2026-10-08T11:20:19.713Z</lastmod>
   </url>
   <url>
     <loc>https://AlexandreBlanche-Efrei.github.io/Cpp/cours/fiches/string.html</loc>
