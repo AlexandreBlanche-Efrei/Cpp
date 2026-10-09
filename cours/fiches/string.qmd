@@ -46,6 +46,17 @@ for (char c : s) {
 }
 ```
 
+On peut également **comparer deux chaînes** avec les opérateurs ``==``, ``<``, ``<=``, ... : il s'agit d'une comparaison caractère par caractère.
+
+```C++
+if (s == "success") {
+    // ...
+}
+else if (s == "failure") {
+    // ...
+}
+```
+
 # Exemple : saisie de chaîne de caractères
 
 ```C++
