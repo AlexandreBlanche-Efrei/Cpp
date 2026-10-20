@@ -2,7 +2,7 @@
 title: "Démarrer un défi CodinGame"
 ---
 
-Dans cet article, je commente les étapes de la résolution d'un problème CodinGame, ici "*Unary*".
+Dans cet article, je commente les étapes de la résolution d'un problème [**CodinGame**](https://www.codingame.com/), ici "*Unary*".
 
 ![_](../../figures/CodinGame/CodinGame_01_challenge.png){width=90%}
 

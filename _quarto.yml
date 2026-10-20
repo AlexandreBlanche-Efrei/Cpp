@@ -12,7 +12,6 @@ website:
     left:
       - text: Fiches d'aide
         menu:
-          - href: cours/fiches/codingame.qmd
           - href: cours/fiches/vector.qmd
           - href: cours/fiches/string.qmd
           - href: cours/fiches/cin-cout.qmd
@@ -22,6 +21,10 @@ website:
       - text: Articles détaillés
         menu:
           - href: cours/bases/differences_c.qmd
+      - text: CodinGame
+        menu:
+          - href: cours/fiches/codingame.qmd
+          - href: code/codingame/scaleable_tictactoe/scaleable_tictactoe.qmd
 
   favicon: figures/efrei_pantheon.png
 

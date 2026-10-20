@@ -7,11 +7,20 @@ Vous y trouverez des aides pour démarrer, ainsi que des articles plus détaill�
 
 ![_](figures/ISO_CPP_Logo.svg){width=30%}
 
+# Solutions des challenges CodinGame
+
+![](figures/CodinGame/CodinGame_logo.png){width=40%}
+
+- [**Scaleable Tic-Tac-Toe**](code/codingame/scaleable_tictactoe/scaleable_tictactoe.qmd) : défi du moment du 05-10-2026 au 11-10-2026
+
+Pour démarrer avec la plateforme :
+
+- [**Résoudre un défi CodinGame**](cours/fiches/codingame.qmd) : un exemple résolution d'un défi CodinGame, avec entrées-sorties, conteneurs, fonctions de traitement et affichage du résultat.
+
+
 # Fiches introductives
 
 Pour résoudre des problèmes d'algorithmiques en C++, les notions suivantes vous seront utiles !
-
-- [**Résoudre un défi CodinGame**](cours/fiches/codingame.qmd) : un exemple résolution d'un défi CodinGame, avec entrées-sorties, conteneurs, fonctions de traitement et affichage du résultat.
 
 - [**Le conteneur ``vector``**](cours/fiches/vector.qmd) : bien meilleur que les tableaux classiques du C, il connaît sa propre taille et se redimensionne automatiquement !
 
